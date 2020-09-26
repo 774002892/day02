@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<title></title>
+		<meta charset="UTF-8"/>
+		<link href="css/bootstrap.min.css" rel="stylesheet" />
+		<link href="css/bootstrap-theme.min.css" rel="stylesheet" />
+		<style type="text/css">
+	        body {
+	            padding-top: 50px;
+	            font-family: "微软雅黑";
+	        }
+	        .navbar-brand {
+	            padding-top:0;
+	            padding-bottom:0;
+	        }
+	        .navbar-nav a{
+	        	font-size: 18px;
+	        }
+	        .navbar a:hover{
+	        	font-weight: bold;
+	        }
+	    </style>
+	</head>
+
+	<body>
+		<!-- 顶部导航栏开始 -->
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">
+	                    <img src="images/logo.png" style="height: 50px" />
+	                </a>
+				</div>
+				<div class="collapse navbar-collapse" id="nav">
+					<ul class="nav navbar-nav">
+						<li><a href="#">操作系统</a></li>
+						<li><a href="#">数据库</a></li>
+						<li><a href="#">UI</a></li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								编程语言
+	                        <span class="caret"></span>
+	                    </a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Java</a></li>
+								<li><a href="#">C#</a></li>
+								<li><a href="#">C++</a></li>
+							</ul>
+						</li>
+					</ul>
+					<form class="navbar-form navbar-left">
+						<div class="input-group">
+							<input type="text" class="form-control" placeholder="查找...">
+							<span class="input-group-btn">
+					        <button class="btn btn-default" type="button">
+					        	<span class="glyphicon glyphicon-search"></span>
+					        </button>
+						</div>
+					</form>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="#" data-toggle="modal" data-target="#login">登录</a></li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								选择语言
+	                        <span class="caret"></span>
+	                    </a>
+							<ul class="dropdown-menu">
+								<li><a href="#">中文</a></li>
+								<li><a href="#">English</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<!-- 顶部导航栏结束 -->
+
+		<!-- 大屏轮播开始 -->
+		<div id="ad" class="carousel slide" data-ride="carousel" data-interval="3000">
+			<div class="carousel-inner">
+				<div class="item active">
+					<a href="#">
+						<img src="images/carousel/1.jpg" />
+					</a>
+				</div>
+				<div class="item">
+					<a href="#">
+						<img src="images/carousel/2.jpg" />
+					</a>
+				</div>
+				<div class="item">
+					<a href="#">
+						<img src="images/carousel/3.jpg" />
+					</a>
+				</div>
+			</div>
+			<a class="left carousel-control" href="#ad" data-slide="prev">
+				<span class="glyphicon glyphicon-chevron-left"></span>
+			</a>
+			<a class="right carousel-control" href="#ad" data-slide="next">
+				<span class="glyphicon glyphicon-chevron-right"></span>
+			</a>
+			<ol class="carousel-indicators">
+				<li data-target="#ad" data-slide-to="0" class="active"></li>
+				<li data-target="#ad" data-slide-to="1"></li>
+				<li data-target="#ad" data-slide-to="2"></li>
+			</ol>
+		</div>
+		<!-- 大屏轮播结束 -->
+
+		<br />
+		<br />
+
+		<!-- 分栏开始 -->
+		<div class="container">
+			<div class="text-center col-md-4">
+				<a href="#">
+					<img class="img-rounded" src="images/1.png" width="150" height="150" />
+				</a>
+				<h3><strong>Java论坛</strong></h3>
+				<p>共1500个主题，今日新增34个</p>
+			</div>
+			<div class="text-center col-md-4">
+				<a href="#">
+					<img class="img-rounded" src="images/2.png" width="150" height="150" />
+				</a>
+				<h3><strong>C#论坛</strong></h3>
+				<p>共1500个主题，今日新增34个</p>
+			</div>
+			<div class="text-center col-md-4">
+				<a href="#">
+					<img class="img-rounded" src="images/3.png" width="150" height="150" />
+				</a>
+				<h3><strong>C++论坛</strong></h3>
+				<p>共1500个主题，今日新增34个</p>
+			</div>
+			<div class="text-center col-md-4">
+				<a href="#">
+					<img class="img-rounded" src="images/4.png" width="150" height="150" />
+				</a>
+				<h3><strong>SQL Server论坛</strong></h3>
+				<p>共1500个主题，今日新增34个</p>
+			</div>
+			<div class="text-center col-md-4">
+				<a href="#">
+					<img class="img-rounded" src="images/5.png" width="150" height="150" />
+				</a>
+				<h3><strong>Oracle论坛</strong></h3>
+			</div>
+			<div class="text-center col-md-4">
+				<a href="#">
+					<img class="img-rounded" src="images/6.png" width="150" height="150" />
+				</a>
+				<h3><strong>MySQL论坛</strong></h3>
+				<p>共1500个主题，今日新增34个</p>
+			</div>
+		</div>
+		<!-- 分栏结束 -->
+		<!-- 页尾开始 -->
+		<div class="container text-center">
+			<hr /> 硅谷高科教育科技有限公司
+			<br />
+			<br />
+		</div>
+		<!-- 页尾结束 -->
+		
+		<!-- 登录对话框开始 -->
+	    <div id="login" class="modal fade">
+	        <div class="modal-dialog">
+	            <div class="modal-content">
+	                <div class="modal-header">
+	                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+	                    <h4 class="modal-title">用户登录</h4>
+	                </div>
+	                <div class="modal-body">
+	                    <form class="form-horizontal">
+	                        <div class="form-group">
+	                            <label for="username" class="control-label col-md-2">用户名</label>
+	                            <div class="col-md-10">
+	                                <input type="text" id="username" class="form-control" />
+	                            </div>
+	                        </div>
+	                        <div class="form-group">
+	                            <label for="password" class="control-label col-md-2">密码</label>
+	                            <div class="col-md-10">
+	                                <input type="password" id="password" class="form-control" />
+	                            </div>
+	                        </div>
+	                        <div class="form-group">
+	                            <div class="col-md-offset-2">
+	                                <button type="button" class="btn btn-default" data-dismiss="modal">登录</button>
+	                                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+	                            </div>
+	                        </div>
+	                    </form>
+	                </div>
+	                <div class="modal-footer">
+	                    <div class="text-center">
+	                        <a href="#">注册</a>
+	                        <a href="#">忘记密码</a>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	    <!-- 登录对话框结束 -->
+		<script src="js/jquery-1.9.1.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+	</body>
+
+</html>

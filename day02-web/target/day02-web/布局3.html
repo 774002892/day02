@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link href="css/bootstrap.min.css" rel="stylesheet" />
+		<style type="text/css">
+	        body {
+	            font-family: "微软雅黑";
+	        }
+	
+	        .pagination {
+	            margin: 0;
+	            padding: 0;
+	        }
+	    </style>
+	</head>
+	<body>
+		<div class="container">		
+			<nav class="navbar navbar-default">
+		        <div class="navbar-header">
+		            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav">
+		                <span class="sr-only">Toggle</span>
+		                <span class="icon-bar"></span>
+		                <span class="icon-bar"></span>
+		                <span class="icon-bar"></span>
+		            </button>
+		            <a class="navbar-brand" href="#">后台管理系统</a>
+		        </div>
+		        <div class="collapse navbar-collapse" id="nav">
+		            <ul class="nav navbar-nav">
+		                <li><a href="#">部门管理</a></li>
+		                <li class="active"><a href="#">员工管理</a></li>
+		                <li><a href="#">文档管理</a></li>
+		                <li><a href="#">会议管理</a></li>
+		            </ul>
+		        </div>
+		    </nav>
+		    
+		    <div class="page-header">
+	            <h3><strong>员工管理</strong></h3>
+	        </div>
+	    	
+	    		
+	    	<!-- 搜索表单开始 -->
+	        <form>
+	            <div class="form-inline">
+	                <div class="form-group">
+	                    <input type="text" placeholder="姓名包含" class="form-control" />
+	                </div>
+	                <div class="form-group">
+	                    <select class="form-control">
+	                        <option value="">不限性别</option>
+	                        <option value="1">男</option>
+	                        <option value="0">女</option>
+	                    </select>
+	                </div>
+	                <div class="form-group">
+	                    <input type="date" placeholder="出生日期起始" class="form-control" />
+	                </div>
+	                <div class="form-group">
+	                    <input type="date" placeholder="出生日期终止" class="form-control" />
+	                </div>
+	                <div class="form-group">
+	                    <select class="form-control">
+	                        <option value="">不限部门</option>
+	                        <option value="1">技术部</option>
+	                        <option value="2">销售部</option>
+	                        <option value="3">市场部</option>
+	                        <option value="4">行政部</option>
+	                    </select>
+	                </div>
+	                <div class="form-group">
+	                    <button type="submit" class="btn btn-primary">查询</button>
+	                </div>
+	            </div>
+	        </form>
+	    	<!-- 搜索表单结束 -->
+	
+	    	<!-- 查询结果开始 -->
+	        <table class="table table-striped table-bordered" id="results">
+	            <caption>
+	                <h4><strong>查询结果</strong></h4>
+	                <ul class="pagination pagination-sm" style="float:left;">
+	                    <li title="第一页"><a href="#">&laquo;</a></li>
+	                    <li title="上一页"><a href="#">&lsaquo;</a></li>
+	                    <li title="当前页" class="active"><a href="#">3</a></li>
+	                    <li title="下一页"><a href="#">&rsaquo;</a></li>
+	                    <li title="最末页"><a href="#">&raquo;</a></li>
+	                    <li>
+	                        <a href="">共<strong>98</strong>条记录，<strong>10</strong>页</a>
+	                    </li>
+	                </ul>
+	                <div style="float:right;padding:5px">
+	                    <a href="#" class="btn btn-primary btn-sm" onclick="showAdd()">添加员工</a>
+	                </div>
+	            </caption>
+	            <thead>
+	                <tr>
+	                    <th>编号</th>
+	                    <th>姓名</th>
+	                    <th>性别</th>
+	                    <th>出生日期</th>
+	                    <th>所属部门</th>
+	                    <th>操作</th>
+	                </tr>
+	            </thead>
+	            <tbody>
+	                <tr>
+	                    <td>10001</td>
+	                    <td>Jerry</td>
+	                    <td>男</td>
+	                    <td>1979-01-01</td>
+	                    <td>技术部</td>
+	                    <td>
+	                        <button class="btn btn-primary btn-sm">编辑</button>
+	                        <button class="btn btn-warning btn-sm">删除</button>
+	                    </td>
+	                </tr>
+	                <tr>
+	                    <td>10002</td>
+	                    <td>Jam</td>
+	                    <td>女</td>
+	                    <td>1979-01-01</td>
+	                    <td>销售部</td>
+	                    <td>
+	                        <button class="btn btn-primary btn-sm">编辑</button>
+	                        <button class="btn btn-warning btn-sm">删除</button>
+	                    </td>
+	                </tr>
+	                <tr>
+	                    <td>10003</td>
+	                    <td>David</td>
+	                    <td>男</td>
+	                    <td>1980-01-01</td>
+	                    <td>技术部</td>
+	                    <td>
+	                        <button class="btn btn-primary btn-sm">编辑</button>
+	                        <button class="btn btn-warning btn-sm">删除</button>
+	                    </td>
+	                </tr>
+	                <tr>
+	                    <td>10004</td>
+	                    <td>Nancy</td>
+	                    <td>男</td>
+	                    <td>1983-01-01</td>
+	                    <td>技术部</td>
+	                    <td>
+	                        <button class="btn btn-primary btn-sm">编辑</button>
+	                        <button class="btn btn-warning btn-sm">删除</button>
+	                    </td>
+	                </tr>
+	            </tbody>
+	        </table>
+	    	<!-- 查询结果结束 -->
+	   	</div>
+	   	
+	   	<!-- 添加/修改员工信息的弹出对话框开始 -->
+	   	<div class="modal fade" id="employeeDlg">
+	   		<div class="modal-dialog">
+	   			<div class="modal-content">
+	   				<div class="modal-header">
+	   					<button type="button" class="close" data-dismiss="modal">&times;</button>
+	                    <h4 class="modal-title">添加员工</h4>
+	   				</div>
+	   				<div class="modal-body">
+	   					<form class="form-horizontal">
+		   					<div class="form-group">
+			                    <label for="name" class="col-md-3 control-label">姓名：</label>
+			                    <div class="col-md-8">
+			                        <input type="text" id="name" placeholder="姓名" class="form-control" />
+			                    </div>
+			                </div>
+			                <div class="form-group">
+			                    <label for="gender" class="col-md-3 control-label">性别：</label>
+			                    <div class="col-md-8">
+			                        <label class="radio-inline">
+			                            <input id="female" name="gender" type="radio" value="0" />女
+			                        </label>
+			                        <label class="radio-inline">
+			                            <input id="male" name="gender" type="radio" value="1" checked="checked" />男
+			                        </label>
+			                    </div>
+			                </div>
+			                <div class="form-group">
+			                    <label for="birthday" class="col-md-3 control-label">出生日期：</label>
+			                    <div class="col-md-8">
+			                        <input type="date" id="birthday" class="form-control" />
+			                    </div>
+			                </div>
+			                <div class="form-group">
+			                    <label for="department" class="col-md-3 control-label">所属部门：</label>
+			                    <div class="col-md-8">
+			                        <select id="department" class="form-control">
+			                            <option value="">选择一个部门</option>
+			                            <option value="1">技术部</option>
+			                            <option value="2">销售部</option>
+			                            <option value="3">市场部</option>
+			                            <option value="4">行政部</option>
+			                        </select>
+			                    </div>
+			                </div>
+			                <div class="form-group">
+			                	<div class="text-center form-group">
+					                <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+					                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+					            </div>
+			                </div>
+			            </form>
+	   				</div>
+	   			</div>
+	   		</div>
+	   	</div>
+        <!-- 添加/修改员工信息的弹出对话框结束 -->
+		
+		<script src="js/jquery-1.10.2.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/bootbox.js"></script>
+	    <script type="text/javascript">
+	    	$(function(){
+	    		$("#results td button.btn-primary").bind("click", showEdit);
+	    		$("#results td button.btn-warning").bind("click", deleteConfirm);
+	    	});
+	    	
+	    	function showAdd(){
+	    		clearDlg();
+	    		$("#employeeDlg").modal({"backdrop" : "static"});
+	    	}
+	    	
+	    	function showEdit(ev){
+	    		var tr = ev.target.parentElement.parentElement;	    		
+	    		fillDlg($(tr));
+	    		$("#employeeDlg").modal({"backdrop" : "static"});
+	    	}
+	    	
+	    	function clearDlg(){
+				$(".modal-title").html("添加员工");
+	    		$("#name").val("");
+	    		$("#male").attr("checked", false);
+	    		$("#birthday").val("");
+	    		$("#department").val("");
+	    	}
+	    	
+	    	function fillDlg(tr){
+	    		$(".modal-title").html("修改员工");
+	    		
+	    		$("#name").val(tr.children()[1].innerHTML);
+	    		var gender = (tr.children()[2].innerHTML == "男" ? 1:0);
+	    		
+	    		if(gender){
+	    			$("#male")[0].checked = true;
+	    		} else{
+	    			$("#female")[0].checked = true;
+	    		}
+	    		$("#birthday").val(tr.children()[3].innerHTML);
+	    		
+	    		var department = tr.children()[4].innerHTML;
+	    		$("#department option").each(function(index, item){
+	    			if(item.text == department){
+	    				item.selected = true;
+	    				return false;
+	    			}
+	    		});
+	    	}
+	    	
+	        function deleteConfirm(ev) {
+	        	var tr = $(ev.target.parentElement.parentElement);
+	        	var name = tr.children()[1].innerHTML;
+	            bootbox.confirm("确实要删除员工【" + name + "】吗？", function (choice) {
+	                if (choice) {
+	                    tr.remove();
+	                }
+	            });
+	        }
+	    </script>
+	</body>
+</html>
